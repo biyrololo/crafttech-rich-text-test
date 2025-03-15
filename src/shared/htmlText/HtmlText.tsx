@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
+import { Figure } from "../shape";
 
-const HtmlText = forwardRef(({ html, id }: any, ref: any) => {
+const HtmlText = forwardRef<HTMLDivElement, Pick<Figure, 'html' | 'id'>>(({ html, id }, ref) => {
   return (
     <div
       id={`htmltext_${id}`}

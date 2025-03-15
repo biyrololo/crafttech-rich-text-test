@@ -1,6 +1,10 @@
-const Control = ({ tool, setTool }: any) => {
-  const handleOnChange = (e: any) => {
-    setTool(e.target.value);
+import { ControlProps, isTool } from "./types";
+
+const Control = ({ tool, setTool }: ControlProps) => {
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if(isTool(e.target.value)){
+      setTool(e.target.value)
+    }
   };
 
   return (
